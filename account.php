@@ -50,6 +50,10 @@ mysqli_close($conn);
             <br>
             <input type="submit" name="withdraw" value="Withdraw">
         </form>
+       
+        <h4>----------------------</h4>
+        <a href="login.php">Logout</a>
+        
         <h4>----------------------</h4>
         <p>Delete Account</p>
         <a href="delete_account.php?id=<?php print($row["id"]);?>" 
