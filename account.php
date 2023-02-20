@@ -35,7 +35,7 @@ mysqli_close($conn);
     </head>
     <body>
         <h2>Welcome, <?php echo $username; ?>!</h2>
-        <p>Balance: $<?php echo number_format($balance, 2); ?></p>
+        <p>Balance: <?php echo number_format($balance, 2); ?> ฿</p>
         <h3>Deposit</h3>
         <form method="post">
             <label>Amount:</label>

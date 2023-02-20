@@ -7,11 +7,19 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "id: " . $row["id"]. " - Username: " . $row["username"]. " Balance:" . $row["balance"]. "<br>";
+        echo "id: " . $row["id"]. " - Username: " . $row["username"]. " Balance:" . $row["balance"]. "฿" ."<br>";
    
     }
   } else {
     echo "0 results";
   }
+  
 $conn->close();
 ?>
+
+<!DOCTYPE html>
+<html>
+    <body>
+    <a href="login.php">Back to Login</a>
+    </body>
+</html>
