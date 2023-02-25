@@ -13,9 +13,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $amount = $_POST["amount"];
         $query = "UPDATE account SET balance = balance + '$amount' WHERE username = '$username'";
         mysqli_query($conn, $query);
+
+        $query = "INSERT INTO transactions (username, type, amount) VALUES ('$username', 'Deposit', '$amount')";
+        mysqli_query($conn, $query);
+
     } else if (isset($_POST["withdraw"])) {
         $amount = $_POST["amount"];
         $query = "UPDATE account SET balance = balance - '$amount' WHERE username = '$username'";
+        mysqli_query($conn, $query);
+
+        $query = "INSERT INTO transactions (username, type, amount) VALUES ('$username', 'Withdraw', '$amount')";
         mysqli_query($conn, $query);
     }
 }
@@ -24,6 +31,9 @@ $query = "SELECT * FROM account WHERE username = '$username'";
 $result = mysqli_query($conn, $query);
 $row = mysqli_fetch_assoc($result);
 $balance = $row["balance"];
+
+$query = "SELECT * FROM transactions WHERE username = '$username";
+$result = mysqli_query($conn, $query);
 
 mysqli_close($conn);
 ?>
@@ -54,6 +64,8 @@ mysqli_close($conn);
         <h4>----------------------</h4>
         <a href="login.php">Logout</a>
         
+        <h4>----------------------</h4>
+        <a href="transactions.php">transactions</a>
         <h4>----------------------</h4>
         <p>Delete Account</p>
         <a href="delete_account.php?id=<?php print($row["id"]);?>" 
