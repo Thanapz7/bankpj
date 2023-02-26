@@ -50,14 +50,17 @@ mysqli_close($conn);
             }
             p{
                 font-size: 25px;
+                color: #334252;
             }
             h2{
                 margin-top: 40px;
                 font-size: 60px;
+                color: #F75940;
             }
             h3{
                 font-size: 25px;
                 font-family: "Lucida Console", "Courier New", monospace;
+                color: #334252;
             }
             h4{
                 font-family: "Lucida Console", "Courier New", monospace;
