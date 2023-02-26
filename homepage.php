@@ -11,14 +11,17 @@
         h1 {
             margin-top: 200px;
             font-size: 75px;
+            color: #F75940;
         }
         p {
-            font-size: 30px;
+            font-size: 25px;
+            font-family: "Lucida Console", "Courier New", monospace;
+            color: #334252;
         }
         button {
-            margin-top: 40px;
+            margin-top: 30px;
             padding: 20px 40px;
-            font-size: 32px;
+            font-size: 30px;
             background-color: #95E1D3;
             color: white;
             border: none;
